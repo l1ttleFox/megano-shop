@@ -4,6 +4,8 @@ import datetime
 
 
 class Image(models.Model):
+    """ Модель картинки товара. """
+    
     class Meta:
         verbose_name = "Image"
         verbose_name_plural = "Image"
@@ -13,6 +15,8 @@ class Image(models.Model):
 
 
 class Tag(models.Model):
+    """ Модель метки категории товара. """
+    
     class Meta:
         verbose_name = "Tag"
         verbose_name_plural = "Tags"
@@ -22,6 +26,8 @@ class Tag(models.Model):
 
 
 class CatalogItems(models.Model):
+    """ Модель каталога товаров. """
+
     class Meta:
         verbose_name = "Item Catalogs"
         verbose_name_plural = "Items Catalogs"
@@ -33,6 +39,8 @@ class CatalogItems(models.Model):
 
 
 class Specification(models.Model):
+    """ Модель спецификаций товаров. """
+    
     class Meta:
         verbose_name = "Specification"
         verbose_name_plural = "Specifications"
@@ -42,6 +50,8 @@ class Specification(models.Model):
 
 
 class Product(models.Model):
+    """ Модель продукта. """
+    
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
@@ -61,11 +71,15 @@ class Product(models.Model):
     
     @property
     def rating(self):
+        """ Геттер рейтинга товара для сериализатора. """
+        
         self.review_list = [i_review.rate for i_review in self.reviews]
         return round(sum(self.review_list) / len(self.review_list), 2)
     
     @property
     def real_price(self):
+        """ Геттер цены товара для сериализатора. """
+        
         if self.saleitem:
             if self.saleitem.dateFrom < datetime.datetime.now() < self.saleitem.dateTo:
                 return self.saleitem.salePrice
@@ -73,6 +87,8 @@ class Product(models.Model):
 
 
 class Review(models.Model):
+    """ Модель отзыва на товар. """
+    
     class Meta:
         verbose_name = "Review"
         verbose_name_plural = "Reviews"
@@ -85,16 +101,22 @@ class Review(models.Model):
     
     @property
     def email(self):
+        """ Геттер электронной почты пользователя для сериализатора. """
+        
         return self.author.email
     
     @property
     def author_name(self):
+        """ Геттер имени пользователя для сериализатора. """
+        
         if self.author.first_name:
             return self.author.first_name
         return self.author.username
     
 
 class SaleItem(models.Model):
+    """ Модель товара со скидкой. """
+    
     class Meta:
         verbose_name = "Sale Item"
         verbose_name_plural = "Sale Items"

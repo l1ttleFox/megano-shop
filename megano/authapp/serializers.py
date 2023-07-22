@@ -3,12 +3,16 @@ from authapp.models import Avatar, Profile
 
 
 class AvatarSerializer(serializers.ModelSerializer):
+    """ Сериализатор модели аватара пользователя. """
+    
     class Meta:
         model = Avatar
         fields = ["src", "alt"]
         
         
 class ProfileSerializer(serializers.ModelSerializer):
+    """ Сериализатор модели профиля пользователя. """
+    
     email = serializers.SerializerMethodField()
     avatar = AvatarSerializer()
     
@@ -17,6 +21,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = ["fullname", "email", "phone", "avatar"]
         
     def get_email(self, obj):
+        """ Метод определения электронной почты пользователя вручную. """
         return obj.user.email
     
         
