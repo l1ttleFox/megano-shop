@@ -14,6 +14,16 @@ class Image(models.Model):
     alt = models.CharField(max_length=100, blank=True, verbose_name="description")
 
 
+class Category(models.Model):
+    """ Модель категории товара. """
+    
+    class Neta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+        
+    name = models.CharField(max_length=100, blank=True, verbose_name="name")
+        
+        
 class Tag(models.Model):
     """ Модель метки категории товара. """
     
@@ -23,6 +33,7 @@ class Tag(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, blank=True, unique=True, verbose_name="name")
+    category = models.ForeignKey(Category, related_name="tags", null=True, default=None, on_delete=models.CASCADE, verbose_name="category")
 
 
 class CatalogItems(models.Model):
@@ -57,7 +68,7 @@ class Product(models.Model):
         verbose_name_plural = "Products"
     
     id = models.AutoField(primary_key=True)
-    category = models.IntegerField(blank=False, verbose_name="category")
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, default=None, related_name="products", verbose_name="category")
     price = models.DecimalField(max_digits=14, decimal_places=2, blank=False, verbose_name="price")
     count = models.IntegerField(blank=False, verbose_name="count")  # это кол-во товара в магазине, или в корзине покупателя?
     date = models.DateTimeField(auto_now_add=True, blank=True, verbose_name="date")
@@ -68,6 +79,9 @@ class Product(models.Model):
     images = models.ManyToManyField(Image, related_name="products", blank=True, verbose_name="tags")
     tags = models.ManyToManyField(Tag, related_name="products", blank=True, verbose_name="tags")
     specifications = models.ManyToManyField(Specification, related_name="products", verbose_name="specifications")
+    # extra fields
+    limited = models.BooleanField(default=False, verbose_name="limited")
+    available = models.BooleanField(default=True, verbose_name="available")
     
     @property
     def rating(self):
@@ -126,3 +140,4 @@ class SaleItem(models.Model):
     salePrice = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="sale price")
     dateFrom = models.DateTimeField(auto_now_add=True, verbose_name="date from")
     dateTo = models.DateTimeField(verbose_name="date to")
+        

@@ -65,6 +65,7 @@ class ProductFullSerializer(serializers.ModelSerializer):
     specifications = SpecificationSerializer(many=True)
     rating = serializers.ReadOnlyField(source="rating")
     reviews = serializers.SerializerMethodField()
+    category = serializers.SerializerMethodField()
     
     class Meta:
         model = Product
@@ -90,6 +91,9 @@ class ProductFullSerializer(serializers.ModelSerializer):
         selected_reviews = obj.reviews.all()
         return ReviewSerializer(selected_reviews, many=True).data
     
+    def get_category(self, obj):
+        return obj.category.pk
+
 
 class ProductShortSerializer(serializers.ModelSerializer):
     """ Неполный сериализатор модели товара. """
@@ -97,7 +101,9 @@ class ProductShortSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
     tags = TagSerializer(many=True)
     rating = serializers.ReadOnlyField(source="rating")
+    price = serializers.ReadOnlyField(source="real_price")
     reviews = serializers.SerializerMethodField()
+    category = serializers.SerializerMethodField()
     
     class Meta:
         model = Product
@@ -120,6 +126,9 @@ class ProductShortSerializer(serializers.ModelSerializer):
         """ Метод определения поля отзывов на товар вручную. """
         selected_reviews = obj.reviews.all()
         return ReviewSerializer(selected_reviews, many=True).data
+    
+    def get_category(self, obj):
+        return obj.category.pk
 
 
 class SaleItemSerializer(serializers.ModelSerializer):
