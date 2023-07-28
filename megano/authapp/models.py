@@ -10,7 +10,13 @@ class Avatar(models.Model):
         verbose_name_plural = "Avatars"
     
     src = models.ImageField(upload_to="media/users/avatars/", default=None, verbose_name="url")
-    alt = models.CharField(max_length=100, blank=True, verbose_name="description")
+    alt = models.CharField(max_length=100, blank=True, null=True, default=None, verbose_name="description")
+    
+    @property
+    def auto_alt(self):
+        if self.alt:
+            return self.alt
+        return f"{self.profile.user.username}'s avatar"
 
 
 class Profile(models.Model):

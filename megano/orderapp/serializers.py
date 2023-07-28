@@ -1,4 +1,3 @@
-from time import strftime
 from rest_framework import serializers
 from orderapp.models import Payment, Order
 from orderapp.models import OrderProduct
@@ -8,25 +7,9 @@ from productapp.serializers import ImageSerializer, TagSerializer
 class PaymentSerializer(serializers.ModelSerializer):
     """ Сериализатор модели оплаты заказа. """
     
-    name = serializers.SerializerMethodField()
-    month = serializers.SerializerMethodField()
-    year = serializers.SerializerMethodField()
-    
     class Meta:
         model = Payment
         fields = ["number", "name", "month", "year", "code"]
-        
-    def get_name(self, obj):
-        """ Метод определения поля имени заказчика вручную. """
-        return obj.user.profile.fullname
-    
-    def get_month(self, obj):
-        """ Метод определения поля месяца оплаты вручную. """
-        return obj.created_date.strftime("%m")
-    
-    def get_year(self, obj):
-        """ Метод определения года оплаты вручную. """
-        return obj.created_date.strftime("%Y")
     
     
 class OrderProductSerializer(serializers.ModelSerializer):
@@ -133,5 +116,4 @@ class OrderSerializer(serializers.ModelSerializer):
     def get_totalCost(self, obj):
         """ Метод определения поля общей стоимости заказа вручную. """
         return sum([i_product.price for i_product in obj.products])
-    
-    
+        

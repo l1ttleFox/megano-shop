@@ -1,6 +1,7 @@
 from megano.settings import BASKET_SESSION_ID
 from orderapp.models import Basket, OrderProduct
 from productapp.models import Product
+from orderapp.serializers import OrderSerializer
 
 
 class BasketManager:
@@ -45,5 +46,9 @@ class BasketManager:
         
         del self.session[BASKET_SESSION_ID]
         self.session.modified = True
+        
+    def basket_data(self):
+        data = OrderSerializer(self.basket.order_products, many=True).data
+        return data
         
         

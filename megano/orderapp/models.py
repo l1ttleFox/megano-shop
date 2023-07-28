@@ -3,19 +3,6 @@ from django.db import models
 from productapp.models import Product
 
 
-class Payment(models.Model):
-    """ Модель оплаты заказа. """
-    
-    class Meta:
-        verbose_name = "Payment"
-        verbose_name_plural = "Payments"
-    
-    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name="payments", verbose_name="user")
-    number = models.CharField(max_length=100, blank=True, verbose_name="number")
-    created_date = models.DateTimeField(auto_now_add=True)
-    code = models.CharField(max_length=100, blank=True, verbose_name="code")
-
-
 class Basket(models.Model):
     """
     Модель корзины товаров.
@@ -71,3 +58,20 @@ class Order(models.Model):
     city = models.CharField(max_length=100, blank=True, verbose_name="city")
     address = models.CharField(max_length=300, blank=True, verbose_name="address")
     products = models.ManyToManyField(OrderProduct, related_name="orders", verbose_name="order_products")
+
+
+class Payment(models.Model):
+    """ Модель оплаты заказа. """
+    
+    class Meta:
+        verbose_name = "Payment"
+        verbose_name_plural = "Payments"
+    
+    name = models.CharField(max_length=100, blank=True, verbose_name="name")
+    number = models.CharField(max_length=100, blank=True, verbose_name="number")
+    month = models.PositiveSmallIntegerField(blank=True, verbose_name="month")
+    year = models.IntegerField(blank=True, verbose_name="year")
+    code = models.CharField(max_length=100, blank=True, verbose_name="code")
+    order = models.OneToOneField(Order, on_delete=models.PROTECT, related_name="payment", verbose_name="order")
+    
+    
