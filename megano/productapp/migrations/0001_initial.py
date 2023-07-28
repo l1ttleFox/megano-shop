@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -15,109 +14,242 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Image',
+            name="Image",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('src', models.ImageField(upload_to='media/images/', verbose_name='url')),
-                ('alt', models.CharField(blank=True, max_length=100, verbose_name='description')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "src",
+                    models.ImageField(upload_to="media/images/", verbose_name="url"),
+                ),
+                (
+                    "alt",
+                    models.CharField(
+                        blank=True, max_length=100, verbose_name="description"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Image',
-                'verbose_name_plural': 'Image',
+                "verbose_name": "Image",
+                "verbose_name_plural": "Image",
             },
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('category', models.IntegerField(verbose_name='category')),
-                ('price', models.DecimalField(decimal_places=2, max_digits=14, verbose_name='price')),
-                ('count', models.IntegerField(verbose_name='count')),
-                ('date', models.DateTimeField(auto_now_add=True, verbose_name='date')),
-                ('title', models.CharField(max_length=100, verbose_name='title')),
-                ('description', models.TextField(blank=True, max_length=1000, verbose_name='description')),
-                ('fullDescription', models.TextField(blank=True, max_length=10000, verbose_name='full description')),
-                ('freeDelivery', models.BooleanField(blank=True, default=False, verbose_name='free delivery')),
-                ('images', models.ManyToManyField(blank=True, related_name='products', to='productapp.image', verbose_name='tags')),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("category", models.IntegerField(verbose_name="category")),
+                (
+                    "price",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=14, verbose_name="price"
+                    ),
+                ),
+                ("count", models.IntegerField(verbose_name="count")),
+                ("date", models.DateTimeField(auto_now_add=True, verbose_name="date")),
+                ("title", models.CharField(max_length=100, verbose_name="title")),
+                (
+                    "description",
+                    models.TextField(
+                        blank=True, max_length=1000, verbose_name="description"
+                    ),
+                ),
+                (
+                    "fullDescription",
+                    models.TextField(
+                        blank=True, max_length=10000, verbose_name="full description"
+                    ),
+                ),
+                (
+                    "freeDelivery",
+                    models.BooleanField(
+                        blank=True, default=False, verbose_name="free delivery"
+                    ),
+                ),
+                (
+                    "images",
+                    models.ManyToManyField(
+                        blank=True,
+                        related_name="products",
+                        to="productapp.image",
+                        verbose_name="tags",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Product',
-                'verbose_name_plural': 'Products',
+                "verbose_name": "Product",
+                "verbose_name_plural": "Products",
             },
         ),
         migrations.CreateModel(
-            name='Specification',
+            name="Specification",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(blank=True, max_length=300, verbose_name='name')),
-                ('value', models.CharField(blank=True, max_length=100, verbose_name='value')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(blank=True, max_length=300, verbose_name="name"),
+                ),
+                (
+                    "value",
+                    models.CharField(blank=True, max_length=100, verbose_name="value"),
+                ),
             ],
             options={
-                'verbose_name': 'Specification',
-                'verbose_name_plural': 'Specifications',
+                "verbose_name": "Specification",
+                "verbose_name_plural": "Specifications",
             },
         ),
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(blank=True, max_length=100, unique=True, verbose_name='name')),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                (
+                    "name",
+                    models.CharField(
+                        blank=True, max_length=100, unique=True, verbose_name="name"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Tag',
-                'verbose_name_plural': 'Tags',
+                "verbose_name": "Tag",
+                "verbose_name_plural": "Tags",
             },
         ),
         migrations.CreateModel(
-            name='SaleItem',
+            name="SaleItem",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('salePrice', models.DecimalField(decimal_places=2, max_digits=14, verbose_name='sale price')),
-                ('dateFrom', models.DateTimeField(auto_now_add=True, verbose_name='date from')),
-                ('dateTo', models.DateTimeField(verbose_name='date to')),
-                ('product', models.OneToOneField(on_delete=django.db.models.deletion.PROTECT, related_name='saleitem', to='productapp.product', verbose_name='product')),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                (
+                    "salePrice",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=14, verbose_name="sale price"
+                    ),
+                ),
+                (
+                    "dateFrom",
+                    models.DateTimeField(auto_now_add=True, verbose_name="date from"),
+                ),
+                ("dateTo", models.DateTimeField(verbose_name="date to")),
+                (
+                    "product",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="saleitem",
+                        to="productapp.product",
+                        verbose_name="product",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Sale Item',
-                'verbose_name_plural': 'Sale Items',
+                "verbose_name": "Sale Item",
+                "verbose_name_plural": "Sale Items",
             },
         ),
         migrations.CreateModel(
-            name='Review',
+            name="Review",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.TextField(blank=True, max_length=5000, verbose_name='text')),
-                ('rate', models.PositiveSmallIntegerField(blank=True, verbose_name='rate')),
-                ('date', models.DateTimeField(auto_now_add=True, verbose_name='date')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='reviews', to=settings.AUTH_USER_MODEL, verbose_name='review')),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reviews', to='productapp.product', verbose_name='product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "text",
+                    models.TextField(blank=True, max_length=5000, verbose_name="text"),
+                ),
+                (
+                    "rate",
+                    models.PositiveSmallIntegerField(blank=True, verbose_name="rate"),
+                ),
+                ("date", models.DateTimeField(auto_now_add=True, verbose_name="date")),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="reviews",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="review",
+                    ),
+                ),
+                (
+                    "product",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="reviews",
+                        to="productapp.product",
+                        verbose_name="product",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Review',
-                'verbose_name_plural': 'Reviews',
+                "verbose_name": "Review",
+                "verbose_name_plural": "Reviews",
             },
         ),
         migrations.AddField(
-            model_name='product',
-            name='specifications',
-            field=models.ManyToManyField(related_name='products', to='productapp.specification', verbose_name='specifications'),
+            model_name="product",
+            name="specifications",
+            field=models.ManyToManyField(
+                related_name="products",
+                to="productapp.specification",
+                verbose_name="specifications",
+            ),
         ),
         migrations.AddField(
-            model_name='product',
-            name='tags',
-            field=models.ManyToManyField(blank=True, related_name='products', to='productapp.tag', verbose_name='tags'),
+            model_name="product",
+            name="tags",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="products",
+                to="productapp.tag",
+                verbose_name="tags",
+            ),
         ),
         migrations.CreateModel(
-            name='CatalogItems',
+            name="CatalogItems",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('title', models.CharField(max_length=100, verbose_name='title')),
-                ('image', models.OneToOneField(on_delete=django.db.models.deletion.PROTECT, related_name='catalogitems', to='productapp.image', verbose_name='image')),
-                ('subcategories', models.ManyToManyField(related_name='catalogitems', to='productapp.catalogitems', verbose_name='subcategories')),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("title", models.CharField(max_length=100, verbose_name="title")),
+                (
+                    "image",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="catalogitems",
+                        to="productapp.image",
+                        verbose_name="image",
+                    ),
+                ),
+                (
+                    "subcategories",
+                    models.ManyToManyField(
+                        related_name="catalogitems",
+                        to="productapp.catalogitems",
+                        verbose_name="subcategories",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Item Catalogs',
-                'verbose_name_plural': 'Items Catalogs',
+                "verbose_name": "Item Catalogs",
+                "verbose_name_plural": "Items Catalogs",
             },
         ),
     ]
