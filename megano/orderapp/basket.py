@@ -1,5 +1,6 @@
+from django.contrib.auth.models import User
 from megano.settings import BASKET_SESSION_ID
-from orderapp.models import Basket, OrderProduct
+from orderapp.models import Basket, OrderProduct, Order
 from productapp.models import Product
 from orderapp.serializers import OrderSerializer
 
@@ -29,10 +30,10 @@ class BasketManager:
                     i_order_product.count = product_count
 
         else:
-            selected_product = Product.objects.filter(id=product_id).first()
+            selected_product = Product.objects.get(id=product_id)
             new_order_product = OrderProduct.objects.create(count=product_count)
-            new_order_product.product.add(selected_product)
-            new_order_product.basket.add(self.basket)
+            new_order_product.product = selected_product
+            new_order_product.basket = self.basket
             new_order_product.save()
 
         self.save()
@@ -50,5 +51,31 @@ class BasketManager:
         self.session.modified = True
 
     def basket_data(self):
+        """Метод получения сериализованных данных корзины."""
         data = OrderSerializer(self.basket.order_products, many=True).data
         return data
+
+    def post_order(self, request, products_data: dict):
+        """Метод публикации нового заказа."""
+        user = User.objects.get(username=request.user.username)
+        products_id_count = dict()
+        for i_product in products_data:
+            products_id_count[str(i_product.get("id"))] = int(i_product.get("count"))
+
+        use_current_basket = True
+        for i_product in self.basket.order_products:
+            if not (
+                str(i_product.id) in products_id_count.keys()
+                and i_product.price == products_data[i_product.id]
+            ):
+                use_current_basket = False
+        if not use_current_basket:
+            for i_product_id in products_id_count.keys():
+                i_product = OrderProduct.objects.get(id=int(i_product_id))
+                i_product.count = products_id_count[i_product_id]
+                self.basket.order_products.add(i_product)
+
+        new_order = Order.objects.create(user=user, basket=self.basket)
+        self.save()
+
+        return new_order

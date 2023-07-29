@@ -4,7 +4,7 @@ from authapp.models import Avatar, Profile
 
 class AvatarSerializer(serializers.ModelSerializer):
     """Сериализатор модели аватара пользователя."""
-    
+
     alt = serializers.ReadOnlyField(source="auto_alt")
 
     class Meta:

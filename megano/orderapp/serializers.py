@@ -70,7 +70,7 @@ class OrderProductSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     """Сериализатор модели заказа."""
 
-    products = OrderProductSerializer(many=True)
+    products = serializers.SerializerMethodField()
     fullName = serializers.SerializerMethodField()
     email = serializers.SerializerMethodField()
     phone = serializers.SerializerMethodField()
@@ -92,6 +92,11 @@ class OrderSerializer(serializers.ModelSerializer):
             "address",
             "products",
         ]
+
+    def get_products(self, obj):
+        order_products = [i_order.product for i_order in obj.basket.order_products]
+        serialized_data = OrderProductSerializer(order_products, many=True).data
+        return serialized_data
 
     def get_fullName(self, obj):
         """Метод определения поля имени заказчика вручную."""
@@ -116,3 +121,15 @@ class OrderSerializer(serializers.ModelSerializer):
     def get_totalCost(self, obj):
         """Метод определения поля общей стоимости заказа вручную."""
         return sum([i_product.price for i_product in obj.products])
+
+
+class ShortOrderSerializer(serializers.ModelSerializer):
+    orderId = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Order
+        fields = ["orderId"]
+
+    def get_orderId(self, obj):
+        """Метод определения id заказа вручную."""
+        return obj.id

@@ -74,11 +74,13 @@ class Order(models.Model):
     paymentType = models.CharField(
         max_length=100, blank=True, verbose_name="payment type"
     )
-    status = models.CharField(max_length=100, blank=True, verbose_name="status")
+    status = models.CharField(
+        max_length=100, blank=True, default="posted", verbose_name="status"
+    )
     city = models.CharField(max_length=100, blank=True, verbose_name="city")
     address = models.CharField(max_length=300, blank=True, verbose_name="address")
-    products = models.ManyToManyField(
-        OrderProduct, related_name="orders", verbose_name="order_products"
+    basket = models.OneToOneField(
+        Basket, on_delete=models.PROTECT, related_name="order", verbose_name="basket"
     )
 
 
