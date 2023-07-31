@@ -3,6 +3,7 @@ from megano.settings import BASKET_SESSION_ID
 from orderapp.models import Basket, OrderProduct, Order
 from productapp.models import Product
 from orderapp.serializers import OrderSerializer
+from productapp.serializers import ProductShortSerializer
 
 
 class BasketManager:
@@ -12,15 +13,23 @@ class BasketManager:
         """Метод для привязки сессии к экземпляру класса менеджера."""
 
         self.session = request.session
-        basket = self.session.get(BASKET_SESSION_ID)
+        self.basket = None
 
+    def get_basket(self):
+        basket = None
+        basket_id = self.session.get(BASKET_SESSION_ID)
+        if basket_id:
+            basket = Basket.objects.get(id=int(basket_id))
         if not basket:
             basket = Basket.objects.create()
-            self.session[BASKET_SESSION_ID] = basket
-        self.basket = basket
+            self.session[BASKET_SESSION_ID] = basket.id
+
+        return basket
 
     def set_product_amount(self, product_id: int, product_count: int):
         """Метод для изменения кол-ва товара в корзине."""
+
+        self.basket = self.get_basket()
 
         if product_id in [
             i_order_product.product.id for i_order_product in self.basket.order_products
@@ -52,11 +61,18 @@ class BasketManager:
 
     def basket_data(self):
         """Метод получения сериализованных данных корзины."""
-        data = OrderSerializer(self.basket.order_products, many=True).data
-        return data
+
+        self.basket = self.get_basket()
+
+        data = ProductShortSerializer(self.basket.order_products.all(), many=True).data
+        print(type(data))
+        return 1
 
     def post_order(self, request, products_data: dict):
         """Метод публикации нового заказа."""
+
+        self.basket = self.get_basket()
+
         user = User.objects.get(username=request.user.username)
         products_id_count = dict()
         for i_product in products_data:

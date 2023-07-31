@@ -1,10 +1,10 @@
-from django.db.models import Count
+from django.db.models import Count, Avg
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from productapp import serializers
 from productapp import models
 import json
-from productapp.filters import CatalogFilter
 from productapp.pagination import CatalogPagination, SaleItemsPagination
+from productapp.filters import CatalogFilter
 
 
 class CategoriesView(ListAPIView):
@@ -18,8 +18,10 @@ class CatalogView(ListAPIView):
     """View каталога товаров."""
 
     serializer_class = serializers.ProductShortSerializer
-    filter_backends = [CatalogFilter]
     pagination_class = CatalogPagination
+    filter_backends = [
+        CatalogFilter,
+    ]
 
     def get_queryset(self):
         """Метод получения запроса к бд вручную с учётом всех фильтров."""
@@ -45,7 +47,7 @@ class CatalogView(ListAPIView):
                 free_delivery = True
             elif free_delivery == "false":
                 free_delivery = False
-            queryset = queryset.filter(free_delivery=free_delivery)
+            queryset = queryset.filter(freeDelivery=free_delivery)
 
         available = self.request.GET.get("filter[available]", None)
         if available:
@@ -59,11 +61,13 @@ class CatalogView(ListAPIView):
         if category:
             queryset = queryset.filter(category=category)
 
-        tags = json.loads(self.request.GET.get("tags", None))
+        tags = self.request.GET.get("tags", None)
         if tags:
-            tag_ids = [int(i_tag["id"]) for i_tag in tags]
-            tags = models.Tag.objects.filter(pk__in=tag_ids)
-            queryset = queryset.filter(tags__in=tags)
+            tags = json.loads(tags)
+            if tags:
+                tag_ids = [int(i_tag["id"]) for i_tag in tags]
+                tags = models.Tag.objects.filter(pk__in=tag_ids)
+                queryset = queryset.filter(tags__in=tags)
 
         return queryset
 
@@ -76,9 +80,9 @@ class PopularProductsView(ListAPIView):
     def get_queryset(self):
         """Метод получения запроса к бд вручную."""
         queryset = models.Product.objects.filter(available=True).all()
-        queryset = queryset.annotate(orders_count=Count("orders")).order_by(
-            "-orders_count"
-        )[: int(models.Product.objects.count() / 10)]
+        queryset = queryset.annotate(
+            orders_count=Count("order_products__basket")
+        ).order_by("-orders_count")[: int(models.Product.objects.count() / 10)]
         return queryset
 
 

@@ -36,7 +36,7 @@ class BasketView(APIView):
 
     def get(self, request):
         manager = BasketManager(request)
-        return manager.basket_data()
+        return Response(manager.basket_data())
 
     def post(self, request):
         manager = BasketManager(request)
