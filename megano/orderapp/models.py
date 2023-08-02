@@ -12,7 +12,8 @@ class Basket(models.Model):
     class Meta:
         verbose_name = "basket"
         verbose_name_plural = "baskets"
-
+        ordering = ["id"]
+        
 
 class OrderProduct(models.Model):
     """Модель товара в заказе."""
@@ -20,6 +21,7 @@ class OrderProduct(models.Model):
     class Meta:
         verbose_name = "Order Product"
         verbose_name_plural = "Order Products"
+        ordering = ["id"]
 
     id = models.AutoField(primary_key=True)
     count = models.IntegerField(blank=False, verbose_name="count")
@@ -60,6 +62,7 @@ class Order(models.Model):
     class Meta:
         verbose_name = "Order"
         verbose_name_plural = "Orders"
+        ordering = ["last_edited"]
 
     id = models.AutoField(primary_key=True)
     createdAt = models.DateTimeField(
@@ -82,6 +85,7 @@ class Order(models.Model):
     basket = models.OneToOneField(
         Basket, on_delete=models.PROTECT, related_name="order", verbose_name="basket"
     )
+    last_edited = models.DateTimeField(auto_now=True)
 
 
 class Payment(models.Model):
@@ -90,6 +94,7 @@ class Payment(models.Model):
     class Meta:
         verbose_name = "Payment"
         verbose_name_plural = "Payments"
+        ordering = ["-year", "-month"]
 
     name = models.CharField(max_length=100, blank=True, verbose_name="name")
     number = models.CharField(max_length=100, blank=True, verbose_name="number")

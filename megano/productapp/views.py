@@ -1,5 +1,7 @@
 from django.db.models import Count, Avg
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
+from rest_framework.permissions import IsAuthenticated
+
 from productapp import serializers
 from productapp import models
 import json
@@ -120,6 +122,7 @@ class ReviewCreateView(CreateAPIView):
 
     queryset = models.Review.objects.all()
     serializer_class = serializers.ReviewSerializer
+    permission_classes = (IsAuthenticated,)
 
     def perform_create(self, serializer):
         """Метод добавления товара к отзыву."""

@@ -1,4 +1,5 @@
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import json
@@ -9,6 +10,8 @@ from orderapp.serializers import OrderSerializer, ShortOrderSerializer
 
 class PaymentView(APIView):
     """View оплаты заказа."""
+    
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
         serialized_data = list(request.POST.keys())[0]
@@ -53,7 +56,9 @@ class BasketView(APIView):
 
 class OrderView(APIView):
     """View заказов."""
-
+    
+    permission_classes = (IsAuthenticated,)
+    
     def get(self, request):
         selected_orders = Order.objects.filter(
             user__username=request.user.username, status="accepted"
@@ -73,7 +78,9 @@ class OrderView(APIView):
 
 class OrderDetailView(APIView):
     """Детальный view заказа."""
-
+    
+    permission_classes = (IsAuthenticated,)
+    
     def get(self, request):
         order_id = request.GET.get("id")
         selected_order = Order.objects.get(id=int(order_id))

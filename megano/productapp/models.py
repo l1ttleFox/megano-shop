@@ -9,6 +9,7 @@ class Image(models.Model):
     class Meta:
         verbose_name = "Image"
         verbose_name_plural = "Image"
+        ordering = ["id"]
 
     src = models.ImageField(upload_to="media/images/", verbose_name="url")
     alt = models.CharField(max_length=100, blank=True, verbose_name="description")
@@ -17,9 +18,10 @@ class Image(models.Model):
 class Category(models.Model):
     """Модель категории товара."""
 
-    class Neta:
+    class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Categories"
+        ordering = ["name"]
 
     name = models.CharField(max_length=100, blank=True, verbose_name="name")
 
@@ -30,6 +32,7 @@ class Tag(models.Model):
     class Meta:
         verbose_name = "Tag"
         verbose_name_plural = "Tags"
+        ordering = ["name"]
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(
@@ -51,6 +54,7 @@ class CatalogItems(models.Model):
     class Meta:
         verbose_name = "Item Catalogs"
         verbose_name_plural = "Items Catalogs"
+        ordering = ["title"]
 
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=False, verbose_name="title")
@@ -73,6 +77,7 @@ class Specification(models.Model):
     class Meta:
         verbose_name = "Specification"
         verbose_name_plural = "Specifications"
+        ordering = ["name"]
 
     name = models.CharField(max_length=300, blank=True, verbose_name="name")
     value = models.CharField(max_length=100, blank=True, verbose_name="value")
@@ -84,6 +89,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
+        ordering = ["title"]
 
     id = models.AutoField(primary_key=True)
     category = models.ForeignKey(
@@ -123,7 +129,10 @@ class Product(models.Model):
     # extra fields
     limited = models.BooleanField(default=False, verbose_name="limited")
     available = models.BooleanField(default=True, verbose_name="available")
-
+    
+    def __str__(self):
+        return f"{self.title} (id: {self.id}, price: {self.price})"
+    
     @property
     def rating(self):
         """Геттер рейтинга товара для сериализатора."""
@@ -147,6 +156,7 @@ class Review(models.Model):
     class Meta:
         verbose_name = "Review"
         verbose_name_plural = "Reviews"
+        ordering = ["-date"]
 
     author = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name="reviews", verbose_name="review"
@@ -182,7 +192,8 @@ class SaleItem(models.Model):
     class Meta:
         verbose_name = "Sale Item"
         verbose_name_plural = "Sale Items"
-
+        ordering = ["product"]
+        
     id = models.AutoField(primary_key=True)
     product = models.OneToOneField(
         Product,

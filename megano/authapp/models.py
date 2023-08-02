@@ -8,6 +8,7 @@ class Avatar(models.Model):
     class Meta:
         verbose_name = "Avatar"
         verbose_name_plural = "Avatars"
+        ordering = ["id"]
 
     src = models.ImageField(
         upload_to="media/users/avatars/", default=None, verbose_name="url"
@@ -29,6 +30,7 @@ class Profile(models.Model):
     class Meta:
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
+        ordering = ["id"]
 
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="profile", verbose_name="user"
