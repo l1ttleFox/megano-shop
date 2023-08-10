@@ -1,0 +1,2524 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2023-08-06T15:38:26.182Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "Category 'phone'",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"Tag\", \"object\": \"Tag 5 inch (category: 'phone', id: 1)\"}}, {\"added\": {\"name\": \"Tag\", \"object\": \"Tag 6 inch (category: 'phone', id: 2)\"}}, {\"added\": {\"name\": \"Tag\", \"object\": \"Tag 7 inch (category: 'phone', id: 3)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2023-08-06T15:38:44.286Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "1",
+        "object_repr": "Image 'iphone 14' (id: 1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2023-08-06T15:38:56.553Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "1",
+        "object_repr": "Specification wifi: yes (id: 1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2023-08-06T15:39:07.637Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "2",
+        "object_repr": "Specification waterproof: yes (id: 2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2023-08-06T15:39:17.695Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "3",
+        "object_repr": "Specification memory: 128 GB (id: 3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2023-08-06T15:40:37.159Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "1",
+        "object_repr": "Iphone 41 (id: 1, price: 1200)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2023-08-06T15:41:35.983Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "1",
+        "object_repr": "Iphone 41 (id: 1, price: 1200.00)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Images\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2023-08-07T14:24:41.433Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "6",
+        "object_repr": "111",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2023-08-07T14:24:41.631Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "7",
+        "object_repr": "1111",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2023-08-07T14:24:41.802Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "8",
+        "object_repr": "11111",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2023-08-07T14:24:42.015Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "9",
+        "object_repr": "111111",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2023-08-07T14:24:42.203Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "10",
+        "object_repr": "1111111",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2023-08-07T14:24:42.406Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "11",
+        "object_repr": "11111111",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2023-08-07T14:24:42.635Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "asgnb[osiudgb",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2023-08-07T14:24:42.798Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "3",
+        "object_repr": "padgnosidg",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2023-08-07T14:24:42.995Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "4",
+        "object_repr": "padgnosidgwee",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2023-08-07T14:24:43.198Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "5",
+        "object_repr": "padgnosidgwee1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2023-08-08T09:08:54.800Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "12",
+        "object_repr": "1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2023-08-08T09:08:55.017Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "13",
+        "object_repr": "11",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2023-08-08T09:08:55.208Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "14",
+        "object_repr": "11q",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2023-08-08T09:08:55.399Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "15",
+        "object_repr": "asd",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2023-08-09T18:32:19.133Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Order object (5)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2023-08-09T18:43:23.027Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "2",
+        "object_repr": "Image 'macbook' (id: 2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2023-08-09T18:43:34.359Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "3",
+        "object_repr": "Image 'macbook2' (id: 3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2023-08-09T18:44:43.717Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "4",
+        "object_repr": "Specification memory type: DDR4 (id: 4)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2023-08-09T18:45:06.442Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "5",
+        "object_repr": "Specification memory: 2 TB (id: 5)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2023-08-09T18:45:17.042Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "6",
+        "object_repr": "Specification waterproof: no (id: 6)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2023-08-09T18:45:30.775Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "Category 'laptop'",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2023-08-09T18:45:38.386Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "4",
+        "object_repr": "Tag 13 inch (category: 'laptop', id: 4)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2023-08-09T18:45:49.562Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "5",
+        "object_repr": "Tag gaming (category: 'laptop', id: 5)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2023-08-09T18:46:08.610Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "2",
+        "object_repr": "MacBook (id: 2, price: 2000)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2023-08-09T18:46:17.505Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "2",
+        "object_repr": "MacBook (id: 2, price: 2000.00)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2023-08-09T18:49:55.269Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "4",
+        "object_repr": "Image 'galaxy_book_3(1)' (id: 4)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2023-08-09T18:50:05.252Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "5",
+        "object_repr": "Image 'galaxy_book_3(2)' (id: 5)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2023-08-09T18:50:14.343Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Image 'galaxy_book_3(3)' (id: 6)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2023-08-09T18:50:31.344Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "7",
+        "object_repr": "Specification OS: Windows 11 (id: 7)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2023-08-09T18:51:06.795Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "8",
+        "object_repr": "Specification processor: Intel Core i7 (id: 8)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2023-08-09T18:51:55.977Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "9",
+        "object_repr": "Specification display type: AMOLED (id: 9)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2023-08-09T18:52:13.436Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "6",
+        "object_repr": "Tag flipping (category: 'laptop', id: 6)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2023-08-09T18:52:34.219Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "7",
+        "object_repr": "Tag fast memory (category: 'laptop', id: 7)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2023-08-09T18:53:09.732Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "8",
+        "object_repr": "Tag video calls (category: 'laptop', id: 8)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2023-08-09T18:54:10.022Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "3",
+        "object_repr": "Samsung Galaxy Book3 (id: 3, price: 2200)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"Sale Item\", \"object\": \"SaleItem object (1)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2023-08-09T20:38:36.190Z",
+        "user": 1,
+        "content_type": 19,
+        "object_id": "1",
+        "object_repr": "Review object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2023-08-09T20:40:52.642Z",
+        "user": 1,
+        "content_type": 19,
+        "object_id": "1",
+        "object_repr": "Review object (1)",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2023-08-09T21:13:22.363Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Image 'laptops' (id: 7)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2023-08-09T21:13:27.205Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "1",
+        "object_repr": "CatalogItems object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2023-08-09T21:14:11.962Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "8",
+        "object_repr": "Image 'electronic_devices' (id: 8)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2023-08-09T21:14:21.447Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "1",
+        "object_repr": "CatalogItems object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2023-08-09T21:14:37.001Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "9",
+        "object_repr": "Image 'laptops' (id: 9)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2023-08-09T21:14:39.003Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "2",
+        "object_repr": "CatalogItems object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2023-08-09T21:14:59.249Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "10",
+        "object_repr": "Image 'phones' (id: 10)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2023-08-09T21:15:01.049Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "3",
+        "object_repr": "CatalogItems object (3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2023-08-09T21:15:05.876Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "1",
+        "object_repr": "CatalogItems object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Subcategories\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2023-08-09T21:23:10.388Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "1",
+        "object_repr": "CatalogItems object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Main category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2023-08-09T21:36:36.950Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "2",
+        "object_repr": "CatalogItems object (2)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2023-08-09T21:36:41.758Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "3",
+        "object_repr": "CatalogItems object (3)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2023-08-10T11:26:56.263Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "3",
+        "object_repr": "Category 'computers'",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2023-08-10T11:27:00.763Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "1",
+        "object_repr": "CatalogItems object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2023-08-10T12:34:28.386Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "11",
+        "object_repr": "Image 'computer1' (id: 11)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2023-08-10T12:34:40.941Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "12",
+        "object_repr": "Image 'computer2' (id: 12)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2023-08-10T13:07:42.967Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "9",
+        "object_repr": "Tag fullsize (category: 'computers', id: 9)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2023-08-10T13:08:14.537Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "4",
+        "object_repr": "computer (id: 4, price: 2600)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add Avatar",
+        "content_type": 7,
+        "codename": "add_avatar"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change Avatar",
+        "content_type": 7,
+        "codename": "change_avatar"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete Avatar",
+        "content_type": 7,
+        "codename": "delete_avatar"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view Avatar",
+        "content_type": 7,
+        "codename": "view_avatar"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add Profile",
+        "content_type": 8,
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change Profile",
+        "content_type": 8,
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete Profile",
+        "content_type": 8,
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view Profile",
+        "content_type": 8,
+        "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add basket",
+        "content_type": 9,
+        "codename": "add_basket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change basket",
+        "content_type": 9,
+        "codename": "change_basket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete basket",
+        "content_type": 9,
+        "codename": "delete_basket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view basket",
+        "content_type": 9,
+        "codename": "view_basket"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add Order",
+        "content_type": 10,
+        "codename": "add_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change Order",
+        "content_type": 10,
+        "codename": "change_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete Order",
+        "content_type": 10,
+        "codename": "delete_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view Order",
+        "content_type": 10,
+        "codename": "view_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add Payment",
+        "content_type": 11,
+        "codename": "add_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change Payment",
+        "content_type": 11,
+        "codename": "change_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete Payment",
+        "content_type": 11,
+        "codename": "delete_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view Payment",
+        "content_type": 11,
+        "codename": "view_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add Order Product",
+        "content_type": 12,
+        "codename": "add_orderproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change Order Product",
+        "content_type": 12,
+        "codename": "change_orderproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete Order Product",
+        "content_type": 12,
+        "codename": "delete_orderproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view Order Product",
+        "content_type": 12,
+        "codename": "view_orderproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add Category",
+        "content_type": 13,
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change Category",
+        "content_type": 13,
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete Category",
+        "content_type": 13,
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view Category",
+        "content_type": 13,
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add Image",
+        "content_type": 14,
+        "codename": "add_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change Image",
+        "content_type": 14,
+        "codename": "change_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete Image",
+        "content_type": 14,
+        "codename": "delete_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view Image",
+        "content_type": 14,
+        "codename": "view_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add Product",
+        "content_type": 15,
+        "codename": "add_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change Product",
+        "content_type": 15,
+        "codename": "change_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete Product",
+        "content_type": 15,
+        "codename": "delete_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view Product",
+        "content_type": 15,
+        "codename": "view_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add Specification",
+        "content_type": 16,
+        "codename": "add_specification"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change Specification",
+        "content_type": 16,
+        "codename": "change_specification"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete Specification",
+        "content_type": 16,
+        "codename": "delete_specification"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view Specification",
+        "content_type": 16,
+        "codename": "view_specification"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add Tag",
+        "content_type": 17,
+        "codename": "add_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change Tag",
+        "content_type": 17,
+        "codename": "change_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete Tag",
+        "content_type": 17,
+        "codename": "delete_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view Tag",
+        "content_type": 17,
+        "codename": "view_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+        "name": "Can add Sale Item",
+        "content_type": 18,
+        "codename": "add_saleitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+        "name": "Can change Sale Item",
+        "content_type": 18,
+        "codename": "change_saleitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+        "name": "Can delete Sale Item",
+        "content_type": 18,
+        "codename": "delete_saleitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+        "name": "Can view Sale Item",
+        "content_type": 18,
+        "codename": "view_saleitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+        "name": "Can add Review",
+        "content_type": 19,
+        "codename": "add_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+        "name": "Can change Review",
+        "content_type": 19,
+        "codename": "change_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+        "name": "Can delete Review",
+        "content_type": 19,
+        "codename": "delete_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+        "name": "Can view Review",
+        "content_type": 19,
+        "codename": "view_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+        "name": "Can add Item Catalogs",
+        "content_type": 20,
+        "codename": "add_catalogitems"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+        "name": "Can change Item Catalogs",
+        "content_type": 20,
+        "codename": "change_catalogitems"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can delete Item Catalogs",
+        "content_type": 20,
+        "codename": "delete_catalogitems"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can view Item Catalogs",
+        "content_type": 20,
+        "codename": "view_catalogitems"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$PEljempDcG0ZvDadGaieuZ$7soQY27jYHFAZhfYjGyjN8ZdrV0M/jW+yFToiEtGHSM=",
+        "last_login": "2023-08-09T18:38:44.704Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-08-06T15:37:43.276Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$LvWq3PNCRYjO9n6GYHm6mz$IKcQUCGmEteZRbuWpVsIUW6kZX1QuxZsZ9Y3uluVJew=",
+        "last_login": "2023-08-09T18:37:24.119Z",
+        "is_superuser": false,
+        "username": "qweqwe",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-08-08T13:48:44.686Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "authapp",
+        "model": "avatar"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "authapp",
+        "model": "profile"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "orderapp",
+        "model": "basket"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "orderapp",
+        "model": "order"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "orderapp",
+        "model": "payment"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "orderapp",
+        "model": "orderproduct"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "productapp",
+        "model": "category"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "productapp",
+        "model": "image"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "productapp",
+        "model": "product"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "productapp",
+        "model": "specification"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "productapp",
+        "model": "tag"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "productapp",
+        "model": "saleitem"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+        "app_label": "productapp",
+        "model": "review"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+        "app_label": "productapp",
+        "model": "catalogitems"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1wl7h09zr4i7pu27yznz4p0mmqd2utkb",
+    "fields": {
+        "session_data": "eyJjYXJ0IjoxNX0:1qTo3b:qejIEPVfXVbMmZTYPeXzyER-dMwmphd0SVUh0c3TgUc",
+        "expire_date": "2023-08-23T18:37:19.776Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "fupvthtbbd73c6w4ip1c2ok1p0usdvv6",
+    "fields": {
+        "session_data": ".eJxVjDEOgzAMRe-SuYqISTBh7N4zIMc2DW0FEoGp6t0LEkO7_vf-e5uetjX3W9GlH8V0xpnL75aInzodQB403WfL87QuY7KHYk9a7G0WfV1P9y-QqeT9jS2g1OChZq1aJScQkCCxeseCxCE21GhFAClh5DCwj5KCdygDQdijTMtqOoefLyaiOxA:1qTo5e:DH5mE8TsK4ftqtOiDpvONwMaJiJKrGeBBCOBei9aVus",
+        "expire_date": "2023-08-23T18:39:26.245Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zigjx8p35l4c1g0b8h8fxqpr14k9hf1x",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAURP-FtSFQLi-X7vsNBC4gVQNJaVfGf7ckXWhmN-fMvInz-1bc3tPqlkiuhE_k8lsGj89UB4kPX--NYqvbugQ6FHrSTucW0-t2un8HxfdyrAE5HMly0piiyIKBBQ1GSOGVYaCDMIDKpsiyRWODBC0VsuF5yRn5fAHWHjaM:1qT1Ai:MWze-uBDTUjzdwpQCLuGgp2SkX9JKw69q3lLs-baAfk",
+        "expire_date": "2023-08-21T14:25:24.066Z"
+    }
+},
+{
+    "model": "authapp.avatar",
+    "pk": 1,
+    "fields": {
+        "src": "authapp/static/images/base_avatar.jpg",
+        "alt": "Avatar is not required"
+    }
+},
+{
+    "model": "authapp.avatar",
+    "pk": 2,
+    "fields": {
+        "src": "authapp/static/images/base_avatar.jpg",
+        "alt": "Avatar is not required"
+    }
+},
+{
+    "model": "authapp.avatar",
+    "pk": 3,
+    "fields": {
+        "src": "authapp/static/images/base_avatar.jpg",
+        "alt": "Avatar is not required"
+    }
+},
+{
+    "model": "authapp.avatar",
+    "pk": 4,
+    "fields": {
+        "src": "authapp/static/images/base_avatar.jpg",
+        "alt": "Avatar is not required"
+    }
+},
+{
+    "model": "authapp.avatar",
+    "pk": 5,
+    "fields": {
+        "src": "authapp/static/images/base_avatar.jpg",
+        "alt": "Avatar is not required"
+    }
+},
+{
+    "model": "authapp.profile",
+    "pk": 3,
+    "fields": {
+        "user": 16,
+        "fullname": "qwe",
+        "phone": null,
+        "avatar": 5
+    }
+},
+{
+    "model": "orderapp.basket",
+    "pk": 1,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 2,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 3,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 4,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 5,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 6,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 7,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 8,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 9,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 10,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 11,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 12,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 13,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 14,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 15,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 16,
+    "fields": {}
+},
+{
+    "model": "orderapp.basket",
+    "pk": 17,
+    "fields": {}
+},
+{
+    "model": "orderapp.orderproduct",
+    "pk": 7,
+    "fields": {
+        "count": 2,
+        "product": 1,
+        "basket": 11
+    }
+},
+{
+    "model": "orderapp.orderproduct",
+    "pk": 8,
+    "fields": {
+        "count": 4,
+        "product": 1,
+        "basket": 14
+    }
+},
+{
+    "model": "orderapp.orderproduct",
+    "pk": 9,
+    "fields": {
+        "count": 1,
+        "product": 1,
+        "basket": 13
+    }
+},
+{
+    "model": "orderapp.orderproduct",
+    "pk": 10,
+    "fields": {
+        "count": 1,
+        "product": 1,
+        "basket": 9
+    }
+},
+{
+    "model": "orderapp.orderproduct",
+    "pk": 11,
+    "fields": {
+        "count": 2,
+        "product": 1,
+        "basket": 11
+    }
+},
+{
+    "model": "orderapp.orderproduct",
+    "pk": 12,
+    "fields": {
+        "count": 1,
+        "product": 1,
+        "basket": 13
+    }
+},
+{
+    "model": "orderapp.orderproduct",
+    "pk": 13,
+    "fields": {
+        "count": 5,
+        "product": 1,
+        "basket": 14
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 1,
+    "fields": {
+        "createdAt": "2023-08-08T13:42:33.497Z",
+        "user": 1,
+        "deliveryType": "common",
+        "paymentType": "online",
+        "status": "posted",
+        "city": null,
+        "address": null,
+        "basket": 6,
+        "last_edited": "2023-08-08T13:42:33.497Z"
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 2,
+    "fields": {
+        "createdAt": "2023-08-08T14:12:03.353Z",
+        "user": 16,
+        "deliveryType": "common",
+        "paymentType": "online",
+        "status": "posted",
+        "city": null,
+        "address": null,
+        "basket": 7,
+        "last_edited": "2023-08-08T14:12:03.354Z"
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 3,
+    "fields": {
+        "createdAt": "2023-08-08T15:18:38.644Z",
+        "user": 1,
+        "deliveryType": "common",
+        "paymentType": "online",
+        "status": "posted",
+        "city": null,
+        "address": null,
+        "basket": 8,
+        "last_edited": "2023-08-08T15:18:38.644Z"
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 4,
+    "fields": {
+        "createdAt": "2023-08-08T15:20:06.961Z",
+        "user": 16,
+        "deliveryType": "express",
+        "paymentType": "online",
+        "status": "posted",
+        "city": "New York",
+        "address": "132 Crosby Street",
+        "basket": 9,
+        "last_edited": "2023-08-08T15:33:17.977Z"
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 5,
+    "fields": {
+        "createdAt": "2023-08-09T18:22:43.800Z",
+        "user": 16,
+        "deliveryType": "ordinary",
+        "paymentType": "online",
+        "status": "postedddd",
+        "city": "москва",
+        "address": "132 Crosby Street",
+        "basket": 11,
+        "last_edited": "2023-08-09T18:32:19.113Z"
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 6,
+    "fields": {
+        "createdAt": "2023-08-09T18:32:40.707Z",
+        "user": 16,
+        "deliveryType": "express",
+        "paymentType": "online",
+        "status": "posted",
+        "city": "москва",
+        "address": "132 Crosby Street",
+        "basket": 13,
+        "last_edited": "2023-08-09T18:32:56.384Z"
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 7,
+    "fields": {
+        "createdAt": "2023-08-09T18:36:52.026Z",
+        "user": 1,
+        "deliveryType": "common",
+        "paymentType": "online",
+        "status": "posted",
+        "city": null,
+        "address": null,
+        "basket": 14,
+        "last_edited": "2023-08-09T18:36:52.026Z"
+    }
+},
+{
+    "model": "orderapp.order",
+    "pk": 8,
+    "fields": {
+        "createdAt": "2023-08-09T18:37:33.050Z",
+        "user": 16,
+        "deliveryType": "ordinary",
+        "paymentType": "online",
+        "status": "posted",
+        "city": "New York",
+        "address": "132 Crosby Street",
+        "basket": 16,
+        "last_edited": "2023-08-09T18:37:42.080Z"
+    }
+},
+{
+    "model": "orderapp.payment",
+    "pk": 1,
+    "fields": {
+        "name": "mango",
+        "number": "1234123412341234",
+        "month": 11,
+        "year": 25,
+        "code": "122",
+        "order": 6
+    }
+},
+{
+    "model": "orderapp.payment",
+    "pk": 2,
+    "fields": {
+        "name": "phone",
+        "number": "1234123412431243",
+        "month": 11,
+        "year": 25,
+        "code": "122",
+        "order": 8
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 1,
+    "fields": {
+        "src": "media/images/asfdddddd_75dgxGO.jpg",
+        "alt": "iphone 14"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 2,
+    "fields": {
+        "src": "media/images/be4db8a9b3bd66cc6c9eb99d729b1ff7_Ql4IJyt.jpg",
+        "alt": "macbook"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 3,
+    "fields": {
+        "src": "media/images/img_2565_WtYiN9a.jpg",
+        "alt": "macbook2"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 4,
+    "fields": {
+        "src": "media/images/galaxy_book_3.jpg",
+        "alt": "galaxy_book_3(1)"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 5,
+    "fields": {
+        "src": "media/images/galaxy_book_33.jpg",
+        "alt": "galaxy_book_3(2)"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 6,
+    "fields": {
+        "src": "media/images/galaxy_book_32.jpg",
+        "alt": "galaxy_book_3(3)"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 7,
+    "fields": {
+        "src": "media/images/laptops.jpg",
+        "alt": "laptops"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 8,
+    "fields": {
+        "src": "media/images/electronic_devices.jpg",
+        "alt": "electronic_devices"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 9,
+    "fields": {
+        "src": "media/images/laptops_99huTAk.jpg",
+        "alt": "laptops"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 10,
+    "fields": {
+        "src": "media/images/phones.jpg",
+        "alt": "phones"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 11,
+    "fields": {
+        "src": "media/images/PC.jpg",
+        "alt": "computer1"
+    }
+},
+{
+    "model": "productapp.image",
+    "pk": 12,
+    "fields": {
+        "src": "media/images/PC2.jpg",
+        "alt": "computer2"
+    }
+},
+{
+    "model": "productapp.category",
+    "pk": 1,
+    "fields": {
+        "name": "phone"
+    }
+},
+{
+    "model": "productapp.category",
+    "pk": 2,
+    "fields": {
+        "name": "laptop"
+    }
+},
+{
+    "model": "productapp.category",
+    "pk": 3,
+    "fields": {
+        "name": "computers"
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 1,
+    "fields": {
+        "name": "5 inch",
+        "category": 1
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 2,
+    "fields": {
+        "name": "6 inch",
+        "category": 1
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 3,
+    "fields": {
+        "name": "7 inch",
+        "category": 1
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 4,
+    "fields": {
+        "name": "13 inch",
+        "category": 2
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 5,
+    "fields": {
+        "name": "gaming",
+        "category": 2
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 6,
+    "fields": {
+        "name": "flipping",
+        "category": 2
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 7,
+    "fields": {
+        "name": "fast memory",
+        "category": 2
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 8,
+    "fields": {
+        "name": "video calls",
+        "category": 2
+    }
+},
+{
+    "model": "productapp.tag",
+    "pk": 9,
+    "fields": {
+        "name": "fullsize",
+        "category": 3
+    }
+},
+{
+    "model": "productapp.catalogitems",
+    "pk": 1,
+    "fields": {
+        "title": "computers",
+        "image": 8,
+        "main": true,
+        "category": 3,
+        "subcategories": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "productapp.catalogitems",
+    "pk": 2,
+    "fields": {
+        "title": "laptops",
+        "image": 9,
+        "main": false,
+        "category": 2,
+        "subcategories": []
+    }
+},
+{
+    "model": "productapp.catalogitems",
+    "pk": 3,
+    "fields": {
+        "title": "phones",
+        "image": 10,
+        "main": false,
+        "category": 1,
+        "subcategories": []
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 1,
+    "fields": {
+        "name": "wifi",
+        "value": "yes"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 2,
+    "fields": {
+        "name": "waterproof",
+        "value": "yes"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 3,
+    "fields": {
+        "name": "memory",
+        "value": "128 GB"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 4,
+    "fields": {
+        "name": "memory type",
+        "value": "DDR4"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 5,
+    "fields": {
+        "name": "memory",
+        "value": "2 TB"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 6,
+    "fields": {
+        "name": "waterproof",
+        "value": "no"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 7,
+    "fields": {
+        "name": "OS",
+        "value": "Windows 11"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 8,
+    "fields": {
+        "name": "processor",
+        "value": "Intel Core i7"
+    }
+},
+{
+    "model": "productapp.specification",
+    "pk": 9,
+    "fields": {
+        "name": "display type",
+        "value": "AMOLED"
+    }
+},
+{
+    "model": "productapp.product",
+    "pk": 1,
+    "fields": {
+        "category": 1,
+        "price": "1200.00",
+        "count": 20,
+        "date": "2023-08-06T15:40:37.120Z",
+        "title": "Iphone 41",
+        "description": "Смартфон Apple iPhone 14 Pro 128 ГБ, Dual: nano SIM + eSIM, космический черный",
+        "fullDescription": "Новый волшебный способ взаимодействия с iPhone.\r\nНоваторские функции безопасности, призванные спасать жизни.\r\nИнновационная 48-мегапиксельная камера для потрясающей детализации.\r\nВсе они оснащены новейшим чипом для смартфонов.\r\nС керамическим экраном, более прочным, чем стекло любого смартфона. Водонепроницаемость. Нержавеющая сталь хирургического класса.\r\n\r\nПредставляем Dynamic Island, по-настоящему инновационную разработку Apple, состоящую из аппаратного и программного обеспечения. Он воспроизводит музыку, спортивные результаты, FaceTime и многое другое — и все это, не отвлекая вас от того, что вы делаете.\r\n\r\nДисплей всегда включен. Всегда наготове. Дисплей, который на солнце становится в 2 раза ярче. Теперь экран блокировки всегда виден, поэтому вам даже не нужно нажимать на него, чтобы оставаться в курсе событий. Когда iPhone повернут лицевой стороной вниз или лежит в кармане, он гаснет, чтобы сэкономить время автономной работы.\r\n\r\niOS 16 позволяет по-новому настраивать экран блокировки. Наложите слой на фотографию, чтобы сделать ее всплывающей. Отслеживайте свои звонки активности. И смотрите текущие обновления из ваших любимых приложений.\r\n\r\niPhone 14 Pro поднимает планку возможностей 48 мегапикселей, обеспечивая в 4 раза большее разрешение в ProRAW для умопомрачительной детализации в каждом кадре.\r\nНовая система Pro Camera System добавляет к диапазону зума телеобъектив оптического качества в 2 раза, что обеспечивает большую гибкость при съемке.\r\nКинематографический режим теперь снимает в формате 4K HDR со скоростью 24 кадра в секунду — стандарт киноиндустрии. Пусть ваши сотрудники позвонят нашим сотрудникам.\r\nТеперь вы можете легко редактировать вместе с другими профессиональными кадрами в формате 4K со скоростью 24 или 30 кадров в секунду. Вы даже можете отредактировать эффект глубины после съемки.\r\nДелайте самые четкие, красочные снимки крупным планом и групповые снимки благодаря новой фронтальной камере TrueDepth с автофокусом и увеличенной диафрагмой.\r\n\r\nНесмотря на оооочень много новых возможностей, iPhone 14 Pro по‑прежнему обеспечивает потрясающее время автономной работы в течение всего дня.\r\n\r\nПолучайте еще больше удовольствия от своего iPhone.",
+        "freeDelivery": false,
+        "limited": true,
+        "available": true,
+        "images": [
+            1
+        ],
+        "tags": [
+            2
+        ],
+        "specifications": [
+            3,
+            2,
+            1
+        ]
+    }
+},
+{
+    "model": "productapp.product",
+    "pk": 2,
+    "fields": {
+        "category": 2,
+        "price": "2000.00",
+        "count": 35,
+        "date": "2023-08-09T18:46:08.573Z",
+        "title": "MacBook",
+        "description": "13.3\" Ноутбук Apple MacBook Air 13 2020 2560x1600, Apple M1 3.2 ГГц, RAM 8 ГБ, DDR4, SSD 256 ГБ, Apple graphics 7-core, macOS, MGN63, серый космос, английская раскладка",
+        "fullDescription": "MacBook Air - тонкий и лёгкий ноутбук Apple с диагональю экрана 13 дюймов, который функционирует на базе macOS, теперь выходит на совершенно новый уровень, благодаря мощным чипам Apple M1. Чип обеспечивает грандиозный прорыв в вычислительных и графических возможностях и позволяет компьютеру работать до 18 часов без подзарядки. Он быстро справляется с вашими задачами, задействуя потрясающую скорость 8-ядерного процессора. Открывает возможности нового уровня в приложениях и играх со сложной графикой, используя всю мощь 8-ядерного графического процессора. А так же ускоряет операции машинного обучения, применяя 16-ядерную систему Neural Engine.\r\nИзображения выглядят на экране более детальными и реалистичными, тексты становятся четче, а цвета − более яркими. Ноутбук подстраивает автоматически баланс белого под освещение, в результате чего изображение на экране выглядит более естественно.\r\nВсё происходит бесшумно, потому что это ноутбук без вентилятора.\r\nНоутбук выполнен в металлическом корпусе классической конструкции.\r\nMacBook Air. Всё такой же компактный. Но теперь гораздо более мощный.",
+        "freeDelivery": true,
+        "limited": true,
+        "available": true,
+        "images": [
+            2,
+            3
+        ],
+        "tags": [
+            4,
+            5
+        ],
+        "specifications": [
+            5,
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "productapp.product",
+    "pk": 3,
+    "fields": {
+        "category": 2,
+        "price": "2200.00",
+        "count": 1000,
+        "date": "2023-08-09T18:54:09.978Z",
+        "title": "Samsung Galaxy Book3",
+        "description": "Ноутбук Samsung Galaxy Book3 360 730QFG-KA1/ 13.3/ FHD AMOLED / Intel Core i7-1360P/ 16 GB / 512 GB SSD / Intel Iris Xe Graphics / Windows 11 Home",
+        "fullDescription": "Операционная система\r\n- Операционная система: Windows 11 Pro\r\nПроцессор\r\n- Производитель процессора: Intel\r\n- Серия процессора: Core i7\r\n- Модель процессора: 1360P\r\n- Частота процессора: 3400 МГц\r\n- Ускорение Turbo Boost: 4600 МГц\r\n- Количество ядер процессора: 12\r\n- Кэш-память: 18 Мб\r\nЭкран (монитор)\r\n- Размер экрана: 13.3\"\r\n- Максимальное разрешение: 1920x1080\r\n- Тип дисплея: AMOLED\r\n- Поверхность экрана: глянцевая\r\n- Сенсорный дисплей: да\r\n- Поддержка активного стилуса: да\r\n- Режим защиты от УФ-излучения: да\r\nВидеокарта\r\n- Тип видеокарты: интегрированный\r\n- Производитель видеокарты: Intel\r\n- Модель видеокарты: Iris Xe Graphics\r\n- Тип видеопамяти: SMA\r\nОперативная память\r\n- Объем оперативной памяти: 16 Гб\r\n- Тип памяти: LPDDR4x\r\nЖесткий диск\r\n- Тип накопителя: SSD\r\n- Объем SSD: 512 Гб\r\n- Интерфейс SSD: PCIe\r\nУстройства ввода информации\r\n- Тип клавиатуры: островная\r\n- Подсветка клавиатуры: да\r\n- Тип манипулятора: TouchPad\r\n- Сканер отпечатка пальцев: да\r\nВеб-камера\r\n- Встроенная веб-камера: да\r\n- Разрешение матрицы веб-камеры: 2 Мп\r\n- Качество видеозаписи: 1080p Full HD\r\nАудиосистема\r\n- Встроенные динамики: да\r\n- Количество динамиков: 2\r\n- Аудиотехнология: Dolby Atmos\r\n- Встроенный микрофон: да\r\nИнтерфейсы\r\n- Порт USB 3.2: 1\r\n- Порт USB 3.1 Type C: 1\r\n- Порт HDMI: 1\r\n- Порт Thunderbolt 4: 1\r\n- Гибридный слот наушники/микрофон: 1\r\n- Слот для карт памяти: micro SD\r\nБеспроводная связь\r\n- Поддержка Wi-Fi: да\r\n- Стандарты Wi-Fi: IEEE 802.11 ax, IEEE 802.11 a, IEEE 802.11 ac, IEEE 802.11 b, IEEE 802.11 g, IEEE 802.11 n\r\n- Поддержка Bluetooth: да\r\n- Версия Bluetooth: 5.1\r\nПитание\r\n- Емкость аккумулятора: 68 Втч\r\n- Максимальное время работы: 22 ч\r\n- Быстрая зарядка: 30 мин = 8 ч\r\n- Тип вилки: евровилка\r\nКорпус\r\n- Материал корпуса: алюминий\r\n- Цвет: графит\r\nКомплектация\r\n- Блок питания: в комплекте\r\n- Инструкция: да\r\nРазмеры и вес\r\n- Высота: 20.2 см\r\n- Ширина: 30.4 см\r\n- Толщина: 1.3 см\r\n- Вес: 1.19 кг",
+        "freeDelivery": true,
+        "limited": false,
+        "available": true,
+        "images": [
+            4,
+            5,
+            6
+        ],
+        "tags": [
+            7,
+            6,
+            8
+        ],
+        "specifications": [
+            7,
+            9,
+            8
+        ]
+    }
+},
+{
+    "model": "productapp.product",
+    "pk": 4,
+    "fields": {
+        "category": 3,
+        "price": "2600.00",
+        "count": 150,
+        "date": "2023-08-10T13:08:14.166Z",
+        "title": "computer",
+        "description": "Мощный игровой компьютер (системный блок) Intel Core i5-12600KF 10ядер х4900MHz, GeForce RTX 3060 12Gb, 32GB, SSD 512GB, HDD 1TB, 700W, Win 10 PRO",
+        "fullDescription": "Самый современный десятиядерный процессор INTEL 12го поколения, за счет удачной архитектуры мощнее на 10-20% всех своих предшественников 10 и 11 поколений. Видеокарта GeForce RTX 3060 12Gb принадлежит к последнему поколению видеокарт nVidia с поддержкой технологий Ray Tracing и DLSS, что позволяет запускать любые игры на максимальных настройках, в том числе: WoT, CS: Go, GTA V, Doom Eternal, Valorant и другие",
+        "freeDelivery": false,
+        "limited": false,
+        "available": true,
+        "images": [
+            11,
+            12
+        ],
+        "tags": [
+            9
+        ],
+        "specifications": [
+            5,
+            4,
+            8,
+            6
+        ]
+    }
+},
+{
+    "model": "productapp.review",
+    "pk": 1,
+    "fields": {
+        "author": 16,
+        "text": "Спасибо, очень вкусно!",
+        "rate": 5,
+        "date": "2023-08-09T20:38:36.128Z",
+        "product": 1
+    }
+},
+{
+    "model": "productapp.saleitem",
+    "pk": 1,
+    "fields": {
+        "product": 3,
+        "salePrice": "1899.00",
+        "dateFrom": "2023-08-09T18:54:10.020Z",
+        "dateTo": "2023-10-09T12:00:00Z"
+    }
+}
+]

@@ -1,4 +1,6 @@
+import datetime
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from productapp.models import Product
 
@@ -44,17 +46,21 @@ class OrderProduct(models.Model):
     def rating(self):
         """Геттер рейтинга товара для сериализатора."""
 
-        self.review_list = [i_review.rate for i_review in self.reviews]
+        self.review_list = [i_review.rate for i_review in self.reviews.all()]
         return round(sum(self.review_list) / len(self.review_list), 2)
 
     @property
     def price(self):
         """Геттер общей стоимости товаров с одинаковым ID для сериализатора."""
 
-        if self.product.saleitem:
-            return round(int(self.count) * float(self.product.saleitem.salePrice), 2)
-        return round(int(self.count) * float(self.product), 2)
-
+        try:
+            if self.product.saleitem.dateFrom < datetime.datetime.now() < self.product.saleitem.dateTo:
+                return int(self.count) * float(self.product.saleitem.salePrice)
+            return int(self.count) * float(self.product.price)
+        
+        except ObjectDoesNotExist:
+            return int(self.count) * float(self.product.price)
+    
 
 class Order(models.Model):
     """Модель заказа."""
@@ -72,16 +78,16 @@ class Order(models.Model):
         User, related_name="orders", on_delete=models.PROTECT, verbose_name="user"
     )
     deliveryType = models.CharField(
-        max_length=100, blank=True, default=None, verbose_name="delivery type"
+        max_length=100, null=True, default="common", verbose_name="delivery type"
     )
     paymentType = models.CharField(
-        max_length=100, blank=True, verbose_name="payment type"
+        max_length=100, null=True, default="online", verbose_name="payment type"
     )
     status = models.CharField(
         max_length=100, blank=True, default="posted", verbose_name="status"
     )
-    city = models.CharField(max_length=100, blank=True, verbose_name="city")
-    address = models.CharField(max_length=300, blank=True, verbose_name="address")
+    city = models.CharField(max_length=100, null=True, verbose_name="city")
+    address = models.CharField(max_length=300, null=True, verbose_name="address")
     basket = models.OneToOneField(
         Basket, on_delete=models.PROTECT, related_name="order", verbose_name="basket"
     )

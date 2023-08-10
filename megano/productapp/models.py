@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 import datetime
 
@@ -13,6 +14,9 @@ class Image(models.Model):
 
     src = models.ImageField(upload_to="media/images/", verbose_name="url")
     alt = models.CharField(max_length=100, blank=True, verbose_name="description")
+    
+    def __str__(self):
+        return f"Image {self.alt!r} (id: {self.pk})"
 
 
 class Category(models.Model):
@@ -24,6 +28,9 @@ class Category(models.Model):
         ordering = ["name"]
 
     name = models.CharField(max_length=100, blank=True, verbose_name="name")
+    
+    def __str__(self):
+        return f"Category {self.name!r}"
 
 
 class Tag(models.Model):
@@ -46,6 +53,9 @@ class Tag(models.Model):
         on_delete=models.CASCADE,
         verbose_name="category",
     )
+    
+    def __str__(self):
+        return f"Tag {self.name} (category: {self.category.name!r}, id: {self.id})"
 
 
 class CatalogItems(models.Model):
@@ -63,14 +73,18 @@ class CatalogItems(models.Model):
         related_name="catalogitems",
         on_delete=models.PROTECT,
         verbose_name="image",
+        blank=True,
     )
     subcategories = models.ManyToManyField(
         "productapp.CatalogItems",
         related_name="catalogitems",
         verbose_name="subcategories",
+        blank=True,
     )
-
-
+    main = models.BooleanField(default=False, verbose_name="main category")
+    category = models.ForeignKey(Category, related_name="catalog_items", verbose_name="category", on_delete=models.CASCADE, null=True)
+        
+    
 class Specification(models.Model):
     """Модель спецификаций товаров."""
 
@@ -81,6 +95,9 @@ class Specification(models.Model):
 
     name = models.CharField(max_length=300, blank=True, verbose_name="name")
     value = models.CharField(max_length=100, blank=True, verbose_name="value")
+    
+    def __str__(self):
+        return f"Specification {self.name}: {self.value} (id: {self.pk})"
 
 
 class Product(models.Model):
@@ -118,7 +135,7 @@ class Product(models.Model):
         default=False, blank=True, verbose_name="free delivery"
     )
     images = models.ManyToManyField(
-        Image, related_name="products", blank=True, verbose_name="tags"
+        Image, related_name="products", blank=True, verbose_name="images"
     )
     tags = models.ManyToManyField(
         Tag, related_name="products", blank=True, verbose_name="tags"
@@ -137,17 +154,21 @@ class Product(models.Model):
     def rating(self):
         """Геттер рейтинга товара для сериализатора."""
 
-        self.review_list = [i_review.rate for i_review in self.reviews]
-        return round(sum(self.review_list) / len(self.review_list), 2)
+        self.review_list = [i_review.rate for i_review in self.reviews.all()]
+        if self.review_list:
+            return round(sum(self.review_list) / len(self.review_list), 2)
+        return 1
 
     @property
     def real_price(self):
         """Геттер цены товара для сериализатора."""
 
-        if self.saleitem:
-            if self.saleitem.dateFrom < datetime.datetime.now() < self.saleitem.dateTo:
+        try:
+            if self.saleitem.dateFrom.timestamp() < datetime.datetime.now().timestamp() < self.saleitem.dateTo.timestamp():
                 return self.saleitem.salePrice
-        return self.price
+            
+        except ObjectDoesNotExist:
+            return self.price
 
 
 class Review(models.Model):
@@ -184,6 +205,12 @@ class Review(models.Model):
         if self.author.first_name:
             return self.author.first_name
         return self.author.username
+    
+    @property
+    def cute_date(self):
+        """Геттер даты публикации отзыва в нужном формате."""
+        
+        return self.date.strftime("%d-%m-%Y")
 
 
 class SaleItem(models.Model):

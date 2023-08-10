@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from productapp.models import (
     CatalogItems,
     Image,
@@ -19,19 +18,44 @@ class ImageSerializer(serializers.ModelSerializer):
         fields = ["src", "alt"]
 
 
+class CatalogItemSerializer(serializers.ModelSerializer):
+    """"""
+    
+    image = ImageSerializer()
+    id = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = CatalogItems
+        fields = ["id", "title", "image"]
+    
+    def get_id(self, obj):
+        """ Метод получения поля id категории вручную."""
+        return obj.category.pk
+
+
 class CatalogItemsSerializer(serializers.ModelSerializer):
     """Сериализатор модели каталога товаров."""
 
-    image = ImageSerializer(many=True)
+    image = ImageSerializer()
+    id = serializers.SerializerMethodField()
+    subcategories = serializers.SerializerMethodField()
 
     class Meta:
         model = CatalogItems
         fields = ["id", "title", "image", "subcategories"]
-        depth = 1
+        
+    def get_id(self, obj):
+        """ Метод получения поля id категории вручную."""
+        return obj.category.pk
+    
+    def get_subcategories(self, obj):
+        """ Метод получения поля подкатегорий вручную."""
+        subcategories = obj.subcategories.all()
+        return CatalogItemSerializer(subcategories, many=True).data
 
 
 class TagSerializer(serializers.ModelSerializer):
-    """Сериализатор модели категории товара."""
+    """Сериализатор модели метки товара."""
 
     class Meta:
         model = Tag
@@ -50,7 +74,8 @@ class ReviewSerializer(serializers.ModelSerializer):
     """Сериализатор модели отзыва на товар."""
 
     author = serializers.ReadOnlyField(source="author_name")
-    email = serializers.ReadOnlyField(source="email")
+    email = serializers.ReadOnlyField()
+    date = serializers.ReadOnlyField(source="cute_date")
 
     class Meta:
         model = Review
@@ -63,7 +88,7 @@ class ProductFullSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
     tags = TagSerializer(many=True)
     specifications = SpecificationSerializer(many=True)
-    rating = serializers.ReadOnlyField(source="rating")
+    rating = serializers.ReadOnlyField()
     reviews = serializers.SerializerMethodField()
     category = serializers.SerializerMethodField()
 
@@ -92,6 +117,7 @@ class ProductFullSerializer(serializers.ModelSerializer):
         return ReviewSerializer(selected_reviews, many=True).data
 
     def get_category(self, obj):
+        """ Метод получения поля id категории вручную."""
         return obj.category.pk
 
 
@@ -100,7 +126,7 @@ class ProductShortSerializer(serializers.ModelSerializer):
 
     images = ImageSerializer(many=True)
     tags = TagSerializer(many=True)
-    rating = serializers.ReadOnlyField(source="rating")
+    rating = serializers.ReadOnlyField()
     price = serializers.ReadOnlyField(source="real_price")
     reviews = serializers.SerializerMethodField()
     category = serializers.SerializerMethodField()
@@ -128,6 +154,7 @@ class ProductShortSerializer(serializers.ModelSerializer):
         return ReviewSerializer(selected_reviews, many=True).data
 
     def get_category(self, obj):
+        """ Метод получения поля id категории вручную."""
         return obj.category.pk
 
 
@@ -137,10 +164,25 @@ class SaleItemSerializer(serializers.ModelSerializer):
     price = serializers.SerializerMethodField()
     title = serializers.SerializerMethodField()
     images = serializers.SerializerMethodField()
+    id = serializers.SerializerMethodField()
+    dateFrom = serializers.SerializerMethodField()
+    dateTo = serializers.SerializerMethodField()
 
     class Meta:
         model = SaleItem
         fields = ["id", "price", "salePrice", "dateFrom", "dateTo", "title", "images"]
+        
+    def get_dateTo(self, obj):
+        """ Метод получения поля даты окончания скидки вручную."""
+        return obj.dateTo.strftime("%m-%d")
+
+    def get_dateFrom(self, obj):
+        """ Метод получения поля даты начала скидки вручную."""
+        return obj.dateFrom.strftime("%m-%d")
+        
+    def get_id(self, obj):
+        """ Метод получения поля id продукта вручную."""
+        return obj.product.id
 
     def get_price(self, obj):
         """Метод определения поля цены товара со скидкой вручную."""
@@ -152,5 +194,5 @@ class SaleItemSerializer(serializers.ModelSerializer):
 
     def get_images(self, obj):
         """Метод определения поля изображения товара вручную."""
-        selected_images = obj.images.all()
+        selected_images = obj.product.images.all()
         return ImageSerializer(selected_images, many=True).data

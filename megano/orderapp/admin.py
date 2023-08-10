@@ -2,38 +2,64 @@ from django.contrib import admin
 from orderapp import models
 
 
+class OrderProductInline(admin.TabularInline):
+    model = models.OrderProduct
+    
+
+class OrderInline(admin.TabularInline):
+    model = models.Order
+    
+    
+class PaymentInline(admin.TabularInline):
+    model = models.Payment
+    
+
 @admin.register(models.Basket)
 class BasketAdmin(admin.ModelAdmin):
-    list_display = ("id", "order_products", "order")
-    fields = ["id", "order_products", "order"]
+    """Регистрация модели корзины в админке."""
+    
+    list_display = ("id", )
+    inlines = [
+        OrderProductInline,
+        OrderInline,
+    ]
 
 
 @admin.register(models.OrderProduct)
 class OrderProductAdmin(admin.ModelAdmin):
+    """Регистрация модели продукта в корзине в админке."""
+    
     list_display = ("id", "count", "product")
-    fields = ["id", "count", "product", "basket"]
-    list_filter = ("id", "count")
+    fields = ["count", "product", "basket"]
+    list_filter = ("count", )
     
 
 @admin.register(models.Order)
 class OrderAdmin(admin.ModelAdmin):
+    """Регистрация модели заказа в админке."""
+    
     list_filter = ("id", "createdAt", "last_edited", "status", "deliveryType")
     fieldsets = [
         ("Base info", {
-            "fields": ("id", "basket", "status", "user", "createdAt", "last_edited"),
+            "fields": ("basket", "status", "user"),
         }),
         ("Delivery", {
             "fields": ("city", "address", "deliveryType"),
             "classes": ("wide",),
         }),
         ("payment", {
-            "fields": ("payment", "paymentType"),
+            "fields": ("paymentType",),
         })
+    ]
+    inlines = [
+        PaymentInline,
     ]
 
 
 @admin.register(models.Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ("number", "month", "year", "code")
+    """Регистрация модели оплаты в админке."""
+    
+    list_display = ("pk", "number", "month", "year", "code")
     fields = ["name", "number", "month", "year", "code", "order"]
     

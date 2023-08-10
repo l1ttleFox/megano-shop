@@ -1,8 +1,11 @@
 from django.urls import path
 from productapp import views
 
+app_name = "productapp"
+
 urlpatterns = [
     path("catalog/", views.CatalogView.as_view(), name="catalog"),
+    path("catalog", views.CatalogView.as_view(), name="catalog_redirect"),
     path("categories/", views.CategoriesView.as_view(), name="categories"),
     path(
         "products/popular/",
@@ -14,10 +17,10 @@ urlpatterns = [
         views.LimitedProductsView.as_view(),
         name="limited_products",
     ),
-    path("sales/", views.SaleItemView.as_view(), name="sales"),
+    path("sales", views.SaleItemView.as_view(), name="sales"),
     path("banners/", views.BannerView.as_view(), name="banners"),
     path(
-        "product/<int:id>/", views.ProductsDetailView.as_view(), name="product_details"
+        "product/<int:id>", views.ProductsDetailView.as_view(), name="product_details"
     ),
     path(
         "product/<int:id>/reviews/",
@@ -25,4 +28,5 @@ urlpatterns = [
         name="review_create",
     ),
     path("tags/", views.TagsView.as_view(), name="tags"),
+    path("tags", views.TagsView.as_view(), name="tags"),
 ]

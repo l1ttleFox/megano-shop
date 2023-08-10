@@ -11,14 +11,15 @@ class Avatar(models.Model):
         ordering = ["id"]
 
     src = models.ImageField(
-        upload_to="media/users/avatars/", default=None, verbose_name="url"
+        upload_to="media/users/avatars/", default="authapp/static/images/base_avatar.jpg", verbose_name="url"
     )
     alt = models.CharField(
-        max_length=100, blank=True, null=True, default=None, verbose_name="description"
+        max_length=100, blank=True, null=True, default="Avatar is not required", verbose_name="description"
     )
 
     @property
     def auto_alt(self):
+        """Геттер описания аватара."""
         if self.alt:
             return self.alt
         return f"{self.profile.user.username}'s avatar"
@@ -39,14 +40,14 @@ class Profile(models.Model):
     phone = models.CharField(
         max_length=100,
         blank=True,
-        unique=True,
+        null=True,
         default=None,
         verbose_name="phone number",
     )
     avatar = models.OneToOneField(
         Avatar,
         blank=True,
-        default=None,
+        null=True,
         on_delete=models.CASCADE,
         related_name="profile",
         verbose_name="avatar",

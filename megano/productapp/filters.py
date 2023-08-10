@@ -9,17 +9,16 @@ class CatalogFilter(filters.BaseFilterBackend):
         sort = request.GET.get("sort", "date")
         sort_type = request.GET.get("sortType", None)
 
-        if sort != "date":
-            if sort == "reviews":
-                queryset = queryset.annotate(reviews_count=Count("tags")).order_by(
-                    "reviews_count"
-                )
-            if sort == "rating":
-                queryset = queryset.annotate(rating=Avg("reviews__rate")).order_by(
-                    "rating"
-                )
-
-        queryset = queryset.order_by(f"{sort}")
+        if sort == "reviews":
+            queryset = queryset.annotate(reviews_count=Count("reviews")).order_by(
+                "reviews_count"
+            )
+        elif sort == "rating":
+            queryset = queryset.annotate(_rating=Avg("reviews__rate")).order_by(
+                "_rating"
+            )
+        else:
+            queryset = queryset.order_by(f"{sort}")
         if sort_type != "inc":
             queryset = queryset.reverse()
 

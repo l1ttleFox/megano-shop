@@ -1,7 +1,6 @@
-from django.db.models import Count, Avg
+from django.db.models import Count
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.permissions import IsAuthenticated
-
 from productapp import serializers
 from productapp import models
 import json
@@ -12,7 +11,7 @@ from productapp.filters import CatalogFilter
 class CategoriesView(ListAPIView):
     """View категорий товаров."""
 
-    queryset = models.CatalogItems.objects.all()
+    queryset = models.CatalogItems.objects.all().filter(main=True)
     serializer_class = serializers.CatalogItemsSerializer
 
 
@@ -47,21 +46,16 @@ class CatalogView(ListAPIView):
         if free_delivery:
             if free_delivery == "true":
                 free_delivery = True
-            elif free_delivery == "false":
-                free_delivery = False
-            queryset = queryset.filter(freeDelivery=free_delivery)
+                queryset = queryset.filter(freeDelivery=True)
 
         available = self.request.GET.get("filter[available]", None)
         if available:
             if available == "true":
-                available = True
-            elif available == "false":
-                available = False
-            queryset = queryset.filter(available=available)
+                queryset = queryset.filter(available=True)
 
         category = self.request.GET.get("category", None)
         if category:
-            queryset = queryset.filter(category=category)
+            queryset = queryset.filter(category=models.Category.objects.get(pk=category))
 
         tags = self.request.GET.get("tags", None)
         if tags:
@@ -80,11 +74,10 @@ class PopularProductsView(ListAPIView):
     serializer_class = serializers.ProductShortSerializer
 
     def get_queryset(self):
-        """Метод получения запроса к бд вручную."""
         queryset = models.Product.objects.filter(available=True).all()
         queryset = queryset.annotate(
             orders_count=Count("order_products__basket")
-        ).order_by("-orders_count")[: int(models.Product.objects.count() / 10)]
+        ).order_by("-orders_count")[:int(models.Product.objects.count() / 10)]
         return queryset
 
 
@@ -115,6 +108,7 @@ class ProductsDetailView(RetrieveAPIView):
 
     queryset = models.Product.objects.all()
     serializer_class = serializers.ProductFullSerializer
+    lookup_field = "id"
 
 
 class ReviewCreateView(CreateAPIView):
@@ -126,6 +120,7 @@ class ReviewCreateView(CreateAPIView):
 
     def perform_create(self, serializer):
         """Метод добавления товара к отзыву."""
+        
         selected_product = models.Product.objects.get(id=self.kwargs["id"])
         serializer.save(product=selected_product)
         serializer.save()
@@ -137,10 +132,9 @@ class TagsView(ListAPIView):
     serializer_class = serializers.TagSerializer
 
     def get_queryset(self):
-        """Метод получения запроса к бд вручную."""
         queryset = models.Tag.objects.all()
 
         category = self.request.GET.get("category", 123)
-        queryset = queryset.filter(category=category)
+        queryset = queryset.filter(category__id=category)
 
         return queryset
