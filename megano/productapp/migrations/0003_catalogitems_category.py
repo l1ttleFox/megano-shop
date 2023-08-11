@@ -5,15 +5,20 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('productapp', '0002_catalogitems_main'),
+        ("productapp", "0002_catalogitems_main"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='catalogitems',
-            name='category',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='catalog_items', to='productapp.category', verbose_name='category'),
+            model_name="catalogitems",
+            name="category",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="catalog_items",
+                to="productapp.category",
+                verbose_name="category",
+            ),
         ),
     ]

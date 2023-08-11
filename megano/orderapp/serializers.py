@@ -68,7 +68,7 @@ class OrderProductSerializer(serializers.ModelSerializer):
     def get_freeDelivery(self, obj):
         """Метод определения поля доставки товара вручную."""
         return obj.product.freeDelivery
-    
+
     def get_reviews(self, obj):
         """Метод определения поля отзывов вручную."""
         reviews = [i_review for i_review in obj.product.reviews.all()]
@@ -104,7 +104,9 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def get_products(self, obj):
         """Метод определения поля продуктов вручную."""
-        order_products = [i_order_product for i_order_product in obj.basket.order_products.all()]
+        order_products = [
+            i_order_product for i_order_product in obj.basket.order_products.all()
+        ]
         serialized_data = OrderProductSerializer(order_products, many=True).data
         return serialized_data
 
@@ -135,11 +137,14 @@ class OrderSerializer(serializers.ModelSerializer):
 
 class ShortOrderSerializer(serializers.ModelSerializer):
     """Краткий сериализатор модели заказа."""
+
     orderId = serializers.SerializerMethodField()
 
     class Meta:
         model = Order
-        fields = ["orderId",]
+        fields = [
+            "orderId",
+        ]
 
     def get_orderId(self, obj):
         """Метод определения id заказа вручную."""
@@ -148,7 +153,7 @@ class ShortOrderSerializer(serializers.ModelSerializer):
 
 class OrderProductInBasketSerializer(serializers.ModelSerializer):
     """Неполный сериализатор модели товара."""
-    
+
     id = serializers.SerializerMethodField()
     images = ImageSerializer(many=True, source="product.images")
     tags = TagSerializer(many=True, source="product.tags")
@@ -160,7 +165,7 @@ class OrderProductInBasketSerializer(serializers.ModelSerializer):
     title = serializers.SerializerMethodField()
     description = serializers.SerializerMethodField()
     freeDelivery = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = OrderProduct
         fields = [
@@ -177,11 +182,11 @@ class OrderProductInBasketSerializer(serializers.ModelSerializer):
             "reviews",
             "rating",
         ]
-    
+
     def get_id(self, obj):
         """Метод получения id товара вручную."""
         return obj.product.id
-        
+
     def get_reviews(self, obj):
         """Метод определения поля отзывов на товар вручную."""
         selected_reviews = obj.product.reviews.all()
@@ -190,29 +195,32 @@ class OrderProductInBasketSerializer(serializers.ModelSerializer):
     def get_category(self, obj):
         """Метод получения категории товара вручную."""
         return obj.product.category.pk
-    
+
     def get_date(self, obj):
         """Метод получения даты публикации товара вручную."""
         return obj.product.date
-    
+
     def get_title(self, obj):
         """Метод получения названия товара вручную."""
         return obj.product.title
-    
+
     def get_description(self, obj):
         """Метод получения описания товара вручную."""
         return obj.product.description
-    
+
     def get_freeDelivery(self, obj):
         """Метод получения поля доставки товара вручную."""
         return obj.product.freeDelivery
-    
+
     def get_price(self, obj):
         """Метод получения поля цены товара вручную."""
         try:
-            if obj.product.saleitem.dateFrom < datetime.datetime.now() < obj.product.saleitem.dateTo:
+            if (
+                obj.product.saleitem.dateFrom
+                < datetime.datetime.now()
+                < obj.product.saleitem.dateTo
+            ):
                 price = obj.product.saleitem.salePrice
         except ObjectDoesNotExist:
             price = obj.product.price
         return price
-        

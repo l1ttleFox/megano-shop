@@ -14,7 +14,7 @@ class Image(models.Model):
 
     src = models.ImageField(upload_to="media/images/", verbose_name="url")
     alt = models.CharField(max_length=100, blank=True, verbose_name="description")
-    
+
     def __str__(self):
         return f"Image {self.alt!r} (id: {self.pk})"
 
@@ -28,7 +28,7 @@ class Category(models.Model):
         ordering = ["name"]
 
     name = models.CharField(max_length=100, blank=True, verbose_name="name")
-    
+
     def __str__(self):
         return f"Category {self.name!r}"
 
@@ -53,7 +53,7 @@ class Tag(models.Model):
         on_delete=models.CASCADE,
         verbose_name="category",
     )
-    
+
     def __str__(self):
         return f"Tag {self.name} (category: {self.category.name!r}, id: {self.id})"
 
@@ -82,9 +82,15 @@ class CatalogItems(models.Model):
         blank=True,
     )
     main = models.BooleanField(default=False, verbose_name="main category")
-    category = models.ForeignKey(Category, related_name="catalog_items", verbose_name="category", on_delete=models.CASCADE, null=True)
-        
-    
+    category = models.ForeignKey(
+        Category,
+        related_name="catalog_items",
+        verbose_name="category",
+        on_delete=models.CASCADE,
+        null=True,
+    )
+
+
 class Specification(models.Model):
     """Модель спецификаций товаров."""
 
@@ -95,7 +101,7 @@ class Specification(models.Model):
 
     name = models.CharField(max_length=300, blank=True, verbose_name="name")
     value = models.CharField(max_length=100, blank=True, verbose_name="value")
-    
+
     def __str__(self):
         return f"Specification {self.name}: {self.value} (id: {self.pk})"
 
@@ -146,10 +152,10 @@ class Product(models.Model):
     # extra fields
     limited = models.BooleanField(default=False, verbose_name="limited")
     available = models.BooleanField(default=True, verbose_name="available")
-    
+
     def __str__(self):
         return f"{self.title} (id: {self.id}, price: {self.price})"
-    
+
     @property
     def rating(self):
         """Геттер рейтинга товара для сериализатора."""
@@ -164,9 +170,13 @@ class Product(models.Model):
         """Геттер цены товара для сериализатора."""
 
         try:
-            if self.saleitem.dateFrom.timestamp() < datetime.datetime.now().timestamp() < self.saleitem.dateTo.timestamp():
+            if (
+                self.saleitem.dateFrom.timestamp()
+                < datetime.datetime.now().timestamp()
+                < self.saleitem.dateTo.timestamp()
+            ):
                 return self.saleitem.salePrice
-            
+
         except ObjectDoesNotExist:
             return self.price
 
@@ -205,11 +215,11 @@ class Review(models.Model):
         if self.author.first_name:
             return self.author.first_name
         return self.author.username
-    
+
     @property
     def cute_date(self):
         """Геттер даты публикации отзыва в нужном формате."""
-        
+
         return self.date.strftime("%d-%m-%Y")
 
 
@@ -220,7 +230,7 @@ class SaleItem(models.Model):
         verbose_name = "Sale Item"
         verbose_name_plural = "Sale Items"
         ordering = ["product"]
-        
+
     id = models.AutoField(primary_key=True)
     product = models.OneToOneField(
         Product,

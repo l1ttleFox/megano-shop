@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('productapp', '0001_initial'),
+        ("productapp", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='catalogitems',
-            name='main',
-            field=models.BooleanField(default=False, verbose_name='main category'),
+            model_name="catalogitems",
+            name="main",
+            field=models.BooleanField(default=False, verbose_name="main category"),
         ),
     ]

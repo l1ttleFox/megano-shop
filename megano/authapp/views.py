@@ -47,7 +47,7 @@ class SignUpView(APIView):
             login(request, user)
             return Response(status=status.HTTP_200_OK)
 
-    # except Exception:
+        # except Exception:
         return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
@@ -61,7 +61,7 @@ def sign_out(request):
 
 class ProfileView(UpdateModelMixin, GenericAPIView):
     """View профиля пользователя."""
-    
+
     permission_classes = (IsAuthenticated,)
     serializer_class = ProfileSerializer
 

@@ -15,7 +15,7 @@ class Basket(models.Model):
         verbose_name = "basket"
         verbose_name_plural = "baskets"
         ordering = ["id"]
-        
+
 
 class OrderProduct(models.Model):
     """Модель товара в заказе."""
@@ -54,13 +54,17 @@ class OrderProduct(models.Model):
         """Геттер общей стоимости товаров с одинаковым ID для сериализатора."""
 
         try:
-            if self.product.saleitem.dateFrom < datetime.datetime.now() < self.product.saleitem.dateTo:
+            if (
+                self.product.saleitem.dateFrom
+                < datetime.datetime.now()
+                < self.product.saleitem.dateTo
+            ):
                 return int(self.count) * float(self.product.saleitem.salePrice)
             return int(self.count) * float(self.product.price)
-        
+
         except ObjectDoesNotExist:
             return int(self.count) * float(self.product.price)
-    
+
 
 class Order(models.Model):
     """Модель заказа."""

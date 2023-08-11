@@ -17,7 +17,7 @@ class BasketManager:
         self.basket = None
 
     def get_basket(self):
-        """ Метод получения корзины из сессии. """
+        """Метод получения корзины из сессии."""
         basket = None
         basket_id = self.session.get(BASKET_SESSION_ID)
         if basket_id:
@@ -25,7 +25,7 @@ class BasketManager:
         if not basket:
             basket = Basket.objects.create()
             self.session[BASKET_SESSION_ID] = basket.id
-            
+
         return basket
 
     def add(self, product_id: int, product_count: int):
@@ -34,7 +34,8 @@ class BasketManager:
         self.basket = self.get_basket()
 
         if product_id in [
-            i_order_product.product.id for i_order_product in self.basket.order_products.all()
+            i_order_product.product.id
+            for i_order_product in self.basket.order_products.all()
         ]:
             for i_order_product in self.basket.order_products.all():
                 if product_id == i_order_product.product.id:
@@ -44,18 +45,21 @@ class BasketManager:
 
         else:
             selected_product = get_object_or_404(Product, id=product_id)
-            new_order_product = OrderProduct.objects.create(count=product_count, basket=self.basket, product=selected_product)
+            new_order_product = OrderProduct.objects.create(
+                count=product_count, basket=self.basket, product=selected_product
+            )
             new_order_product.save()
 
         self.save()
-    
+
     def delete(self, product_id: int, product_count: int):
         """Метод для уменьшения кол-ва товара в корзине."""
 
         self.basket = self.get_basket()
 
         if product_id in [
-            i_order_product.product.id for i_order_product in self.basket.order_products.all()
+            i_order_product.product.id
+            for i_order_product in self.basket.order_products.all()
         ]:
             for i_order_product in self.basket.order_products.all():
                 if product_id == i_order_product.product.id:
@@ -64,7 +68,7 @@ class BasketManager:
                     if i_order_product.count <= 0:
                         i_order_product.delete()
                     break
-                
+
         self.save()
 
     def save(self):
@@ -84,7 +88,9 @@ class BasketManager:
 
         self.basket = self.get_basket()
 
-        data = OrderProductInBasketSerializer(self.basket.order_products.all(), many=True).data
+        data = OrderProductInBasketSerializer(
+            self.basket.order_products.all(), many=True
+        ).data
         return data
 
     def post_order(self, request, products_data: list):
@@ -95,7 +101,7 @@ class BasketManager:
             return self.basket.order
         except ObjectDoesNotExist:
             pass
-        
+
         user = User.objects.get(username=request.user.username)
         products_id_count = dict()
         for i_product in products_data:
@@ -108,11 +114,13 @@ class BasketManager:
                 and i_product.price == products_data[i_product.id]
             ):
                 use_current_basket = False
-                
+
         if not use_current_basket:
             for i_product_id in products_id_count.keys():
                 i_product = get_object_or_404(Product, id=int(i_product_id))
-                i_order_product = OrderProduct.objects.filter(product=i_product, count=products_id_count[str(i_product.id)]).first()
+                i_order_product = OrderProduct.objects.filter(
+                    product=i_product, count=products_id_count[str(i_product.id)]
+                ).first()
                 self.basket.order_products.add(i_order_product)
                 self.basket.save()
 

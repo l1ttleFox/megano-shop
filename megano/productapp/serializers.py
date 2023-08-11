@@ -20,16 +20,16 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class CatalogItemSerializer(serializers.ModelSerializer):
     """"""
-    
+
     image = ImageSerializer()
     id = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = CatalogItems
         fields = ["id", "title", "image"]
-    
+
     def get_id(self, obj):
-        """ Метод получения поля id категории вручную."""
+        """Метод получения поля id категории вручную."""
         return obj.category.pk
 
 
@@ -43,13 +43,13 @@ class CatalogItemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = CatalogItems
         fields = ["id", "title", "image", "subcategories"]
-        
+
     def get_id(self, obj):
-        """ Метод получения поля id категории вручную."""
+        """Метод получения поля id категории вручную."""
         return obj.category.pk
-    
+
     def get_subcategories(self, obj):
-        """ Метод получения поля подкатегорий вручную."""
+        """Метод получения поля подкатегорий вручную."""
         subcategories = obj.subcategories.all()
         return CatalogItemSerializer(subcategories, many=True).data
 
@@ -117,7 +117,7 @@ class ProductFullSerializer(serializers.ModelSerializer):
         return ReviewSerializer(selected_reviews, many=True).data
 
     def get_category(self, obj):
-        """ Метод получения поля id категории вручную."""
+        """Метод получения поля id категории вручную."""
         return obj.category.pk
 
 
@@ -154,7 +154,7 @@ class ProductShortSerializer(serializers.ModelSerializer):
         return ReviewSerializer(selected_reviews, many=True).data
 
     def get_category(self, obj):
-        """ Метод получения поля id категории вручную."""
+        """Метод получения поля id категории вручную."""
         return obj.category.pk
 
 
@@ -171,17 +171,17 @@ class SaleItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = SaleItem
         fields = ["id", "price", "salePrice", "dateFrom", "dateTo", "title", "images"]
-        
+
     def get_dateTo(self, obj):
-        """ Метод получения поля даты окончания скидки вручную."""
+        """Метод получения поля даты окончания скидки вручную."""
         return obj.dateTo.strftime("%m-%d")
 
     def get_dateFrom(self, obj):
-        """ Метод получения поля даты начала скидки вручную."""
+        """Метод получения поля даты начала скидки вручную."""
         return obj.dateFrom.strftime("%m-%d")
-        
+
     def get_id(self, obj):
-        """ Метод получения поля id продукта вручную."""
+        """Метод получения поля id продукта вручную."""
         return obj.product.id
 
     def get_price(self, obj):

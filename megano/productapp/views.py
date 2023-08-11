@@ -55,7 +55,9 @@ class CatalogView(ListAPIView):
 
         category = self.request.GET.get("category", None)
         if category:
-            queryset = queryset.filter(category=models.Category.objects.get(pk=category))
+            queryset = queryset.filter(
+                category=models.Category.objects.get(pk=category)
+            )
 
         tags = self.request.GET.get("tags", None)
         if tags:
@@ -77,7 +79,7 @@ class PopularProductsView(ListAPIView):
         queryset = models.Product.objects.filter(available=True).all()
         queryset = queryset.annotate(
             orders_count=Count("order_products__basket")
-        ).order_by("-orders_count")[:int(models.Product.objects.count() / 10)]
+        ).order_by("-orders_count")[: int(models.Product.objects.count() / 10)]
         return queryset
 
 
@@ -120,7 +122,7 @@ class ReviewCreateView(CreateAPIView):
 
     def perform_create(self, serializer):
         """Метод добавления товара к отзыву."""
-        
+
         selected_product = models.Product.objects.get(id=self.kwargs["id"])
         serializer.save(product=selected_product)
         serializer.save()

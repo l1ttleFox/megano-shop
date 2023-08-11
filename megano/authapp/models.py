@@ -11,10 +11,16 @@ class Avatar(models.Model):
         ordering = ["id"]
 
     src = models.ImageField(
-        upload_to="media/users/avatars/", default="authapp/static/images/base_avatar.jpg", verbose_name="url"
+        upload_to="media/users/avatars/",
+        default="authapp/static/images/base_avatar.jpg",
+        verbose_name="url",
     )
     alt = models.CharField(
-        max_length=100, blank=True, null=True, default="Avatar is not required", verbose_name="description"
+        max_length=100,
+        blank=True,
+        null=True,
+        default="Avatar is not required",
+        verbose_name="description",
     )
 
     @property
